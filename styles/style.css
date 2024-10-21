@@ -6,7 +6,7 @@
   font-size: var(--font-size-main);
   line-height: var(--line-height);
   font-weight: var(--font-weight-main);
-  background:  var(--background-image);
+  background:  var(--background-image), var(--color-background);
   background-position: bottom center;
   background-size: cover;
   background-attachment: fixed;
@@ -15,22 +15,10 @@
 
 .header {
   display: grid;
-  justify-items: end;
-  gap: 55px;
-}
-
-@media (768px <= width < 1024px) {
-  .header {
-    gap: 162px;
-  }
-}
-
-@media (width >= 1024px) {
-  .header {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 114px;
-  }
+  grid-template-rows: 1fr min-content 1fr;
+  height: 100vh;
+  min-height: 668px;
+  position: relative;
 }
 
 .decorated-zone::after {
@@ -69,32 +57,32 @@
   height: 25px;
   border-bottom: 1px solid var(--accent-color); 
   border-left: 1px solid var(--accent-color);
-  top: 633px;
+  bottom: 10px;
   left: 10px;
 }
 
 @media (577px <= width < 768px) {
   .decorated-zone::before {
-    top: 535px;
+    bottom: 10px;
   }
 }
 
 @media (577px <= width < 768px) {
   .footer .decorated-zone::before {
-    top: 630px;
+    bottom: 10px;
   }
 }
 
 @media (768px <= width < 1024px) {
   .decorated-zone::before {
-    top: 979px;
+    bottom: 20px;
     left: 20px;
   }
 }
 
 @media (width >= 1024px) {
   .decorated-zone::before {
-    top: 723px;
+    bottom: 20px;
     left: 20px;
   }
 }
@@ -104,21 +92,21 @@
   z-index: 1;
   color: var(--accent-color);
   text-transform: uppercase;
-  margin-top: 11px;
-  margin-right: 38px;
+  top: 11px;
+  right: 38px;
 }
 
 @media (768px <= width < 1024px) {
   .header__rec {
-    margin-top: 21px;
-    margin-right: 48px;
+    top: 21px;
+    right: 48px;
   }
 }
 
 @media (width >= 1024px) {
   .header__rec {
-    margin-top: 21px;
-    margin-right: 48px;
+    top: 21px;
+    right: 48px;
   }
 }
 
@@ -129,29 +117,29 @@
   box-shadow: 0 0 4px 2px var(--accent-color);
   position: absolute;
   z-index: 1;
-  margin-top: 6px;
-  margin-left: 10px;
+  top: 6px;
+  left: 41px;
 }
 
 .header__theme-menu {
-  padding-top: 76px;
+  justify-self: end;
+  align-self: center;
   padding-right: 7px;
-  max-height: 180px;
-  padding-bottom: 40px;
 }
 
 @media (768px <= width < 1024px) {
   .header__theme-menu {
-    padding-top: 191px;
     padding-right: 18px;
   }
 }
 
 @media (width >= 1024px) {
   .header__theme-menu {
-    padding: 20px 0 185px;
     max-height: auto;
     justify-self: center;
+    align-self: flex-start;
+    padding-top: 20px;
+    padding-left: 7px;
   }
 }
 
@@ -163,7 +151,6 @@
 @media (width >= 1024px) {
   .header__theme-menu-list {
     display: flex;
-    gap: 11px;
   }
 }
 
@@ -183,7 +170,7 @@
 
 .header__theme-menu-button:focus-visible {
   border: none;
-  border-bottom: 1px solid var(--accent-color);
+  border-bottom: 1px solid currentColor;
 }
 
 .header__theme-menu-button:hover {
@@ -192,17 +179,17 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border: 1px solid var(--accent-color);
+  border: 1px solid currentColor;
 }
 
 .header__title {
-  justify-self: start;
+  justify-self: start-center;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   line-height: 83%;
   color: var(--color-title);
   text-shadow: 4px 4px 0 var(--color-shadow);
   padding-left: 10px;
-  margin-top: 3px;
+
 }
 
 @media (768px <= width) {
@@ -214,32 +201,28 @@
 @media (768px <= width < 1024px) {
   .header__title {
     padding-left: 0;
-    margin-top: 70px;
   }
 }
 
 @media (width >= 1024px) {
   .header__title {
     padding: 0px;
-    margin: 0px;
   }
 }
 
 .header__paragrah {
+  justify-self: end;
+  align-self: center;
   font-weight: 700;
   font-size: 18px;
   max-width: 355px;
-  max-height: 117px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 66px;
   color: var(--color-header-text);
+  margin-right: 10px;
 }
 
 @media (768px <= width < 1024px) {
   .header__paragrah {
     margin-right: 20px;
-    margin-bottom: 183px;
     max-width: 364px;
   }
 }
@@ -247,11 +230,9 @@
 @media (width >= 1024px) {
   .header__paragrah {
     max-width: 491px;
-    max-height: 70px;
     margin: 0;
     margin-right: 20px;
-    margin-bottom: 134px;
-    justify-self: end;
+    margin-bottom: 20px;
   }
 }
 
@@ -262,7 +243,7 @@
 .main {
   width: 100%;
   height: 100%;
-  background-color: var(--color-background);
+  background-color: var(--color-background); /*если уберу цвет то будет картинка бекграундом*/
   padding:0 10px;
 }
 
@@ -282,38 +263,38 @@
   padding-top: 40px;
 }
 
-@media (768px <= width < 1024px) {
-  .text-section-one {
+@media (width >=768px ) {
+  .text-section-column {
     display: grid;
     grid-template-columns: 1fr 2fr;
+  }
+
+  .text-section-why {
     gap: 0px 20px;
     margin-top: 0px;
     padding-top: 60px;
   }
   
-  .text-section-one .text-paragraph {
+  .text-section-why .text-paragraph {
     grid-column: 2/2;
   }
 
-  .text-section-one .text-main {
+  .text-section-why .text-main {
     align-self: flex-start;
     grid-column: 2/2;
-    
   }
 
-  .text-section-one .text-name {
+  .text-section-why .text-name {
     grid-row-start: 1;
     grid-row-end: 4;
   }
 
-  .text-section-two .text-name {
+  .text-section-what .text-name {
     margin-top: 29px;
     margin-right: 500px;
   }
 
   .text-section-low {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     gap: 10px 20px;
     margin-top: 32px;
   }
@@ -339,7 +320,7 @@
     margin-bottom: 20px;
   }
 
-  .block-pictures .image-galereya {
+  .block-pictures .image-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 192px 230px 318px;
@@ -373,53 +354,55 @@
 } 
 
 @media (width >= 1024px) {
-  .text-section-one {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
+  .text-section-why {
     gap: 0px 10px;
     margin-top: 0px;
     padding-top: 60px;
   }
   
-  .text-section-one .text-paragraph {
+  .text-section-why .text-paragraph {
     grid-column: 2/2;
   }
 
-  .text-section-one .text-main {
+  .text-section-why .text-main {
     align-self: flex-start;
     grid-column: 2/2;
     
   }
 
-  .text-section-one .text-name {
+  .text-section-why .text-name {
     grid-row-start: 1;
     grid-row-end: 4;
   }
 
-  .text-section-two {
+  .text-card {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 0px 18px;
+    gap: 20px;
+  }
+
+  .text-section-what {
+    display: flex;
+    flex-direction: column;
     padding-top: 72px;
   }
 
-  .text-section-two .text-name {
+  .text-section-what .text-name {
     margin: 0;
+    max-width: 315px;
   }
 
-  .text-section-two .text-main {
+  .text-section-what .text-main {
     grid-row-start: 2;
     grid-row-end: 3;
   }
 
-  .text-section-two .text-paragraph {
+  .text-section-what .text-paragraph {
     grid-row-start: 3;
     grid-row-end: 4;
   }
 
   .text-section-low {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     gap: 10px 10px;
     margin-top: 29px;
   }
@@ -445,7 +428,7 @@
     margin-bottom: 20px;
   }
 
-  .block-pictures .image-galereya {
+  .block-pictures .image-gallery {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 260px 315px 428px;
@@ -510,8 +493,7 @@
 }
 
 .text-paragraph-decor:hover {
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
+  border-bottom: 1px solid currentColor;
 }
 
 .text-paragraph-decor:focus {
@@ -537,50 +519,42 @@
   margin-top: 40px;
 }
 
-.image-galereya { 
+.image-gallery { 
   display: grid;
   gap: 10px;
 }
 
-.image-galereya-item {
+.image-gallery-item {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.image-galereya:last-child {
+.image-gallery:last-child {
   padding-bottom: 40px;
 }
 
 .footer {
   position: relative;
+  height: 100vh;
+  min-height: 668px;
 }
 
-.footer-zagolovok {
-  display: flex;
+.footer-title {
+  display: grid;
+  width: 100%;
   justify-content: center;
-  padding: 261px 0;
-  background-color: var(--color-background);
+  align-content: center;
+  height: 100%;
+  background-color: var(--color-background); /*если уберу цвет фона то цветом фона станет фоновая картинка*/
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   color: var(--color-title);
   text-shadow: 2px 2px 0 var(--color-shadow);
 }
 
-@media (768px <= width < 1024px){
-  .footer-zagolovok {
-    padding: 435px 0;
-  }
-}
-
-@media (width >= 1024px) {
-  .footer-zagolovok {
-    padding: 286px 0;
-  }
-}
-
 @media (width >= 768px){
-  .footer-zagolovok {
+  .footer-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }

@@ -21,23 +21,6 @@
   --color-hover: rgba(50, 49, 45, 0.4); /*кнопка при наведении*/
   --color-shadow:#ff8dcb;  /*Тень заголовка*/
   --color-bg-header-paragraph: #ff8dcb; /*цвет фона в параграфе на главной*/
-}
-
-:root.theme_light {
-  /* Переменные светлой темы */  
-  --font-family: "IBM Plex Mono", sans-serif;
-  --font-size-main: 18px;
-  --font-weight-main: 400;
-  --line-height: 1.3;
-  --color-header-text: #353430; /* цвет текста на главной странице*/
-  --color-background: #fff1f7; /*фон темной темы*/
-  --background-image: url(../images/cover-image-light.png);
-  --color-main: #353430; /*цвет текста в абзаце*/
-  --accent-color: #353430; /* сыллка, фон, rec*/
-  --color-title:  #FFC2E6; /*главный заголовок*/
-  --color-hover: rgba(50, 49, 45, 0.4); /*кнопка при наведении*/
-  --color-shadow:#ff8dcb;  /*Тень заголовка*/
-  --color-bg-header-paragraph: #ff8dcb; /*цвет фона в параграфе на главной*/
   --font-size-title: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
 

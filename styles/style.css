@@ -315,7 +315,7 @@
     padding: 0;
   } 
 
-  .text-section-low .text-main{
+  .text-section-low .text-main {
     margin-top: -10px;
   }
 
@@ -452,6 +452,7 @@
 
 .text-paragraph {
   padding-bottom: 10px;
+  color: var(--color-main);
 }
 
 .text-name {
@@ -474,10 +475,6 @@
   font-weight: 700;
   color: var( --color-header-text);
   margin-bottom: 10px;
-}
-
-.text-paragraph {
-  color: var(--color-main);
 }
 
 .text-paragraph-decor {
@@ -545,7 +542,7 @@
   text-shadow: 2px 2px 0 var(--color-shadow);
 }
 
-@media (width >= 768px){
+@media (width >= 768px) {
   .footer-title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
